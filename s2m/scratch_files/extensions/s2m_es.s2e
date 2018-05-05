@@ -1,23 +1,23 @@
 {
-    "extensionName": "s2m_português_br",
+    "extensionName": "s2m_es",
     "extensionPort": 50209,
     "url": "https://mryslab.github.io/s2m/",
     "blockSpecs": [
         [
             " ",
-            "Mostrar no visor %m.images",
+            "Muestra imagen %m.images",
 	        "display_image",
 	        "01_FELIZ"
         ],
         [
             " ",
-            "Mostrar texto %s",
+            "Texto Rotatorio %s",
             "scroll",
-            "OLA!"
+            "Hello!"
         ],
         [
             " ",
-            "Ligar LED X %n Y %n Intensidade %n",
+            "Enciende Píxel X %n Y %n con intensidad %n",
             "write_pixel",
             "0",
             "0",
@@ -25,67 +25,67 @@
         ],
         [
             " ",
-            "Apagar visor",
+            "Borra Pantalla",
             "display_clear"
         ],
         [
             " ",
-            "Pino digital %m.pins com valor %m.val",
+            "Escribe en Pin digital %m.pins el valor %m.val",
             "digital_write",
             "0",
             "0"
         ],
         [
             " ",
-            "Pino analógico%m.pins com valor %n",
+            "Escribe en Pin analógico %m.pins el valor %n",
             "analog_write",
             "0",
             "0"
         ],
         [
             "b",
-            "Botão A pressionado?",
+            "¿Botón A presionado?",
             "button_a_pressed"
         ],
         [
             "b",
-            "Botão B pressionado?",
+            "¿Botón B presionado?",
             "button_b_pressed"
         ],
         [
             "b",
-            "Inclinado para Direita?",
+            "¿Inclinado hacia la derecha?",
             "tilted_right"
         ],
         [
             "b",
-            "Inclinado para Esquerda?",
+            "¿Inclinado hacia la izquierda?",
             "tilted_left"
         ],
         [
             "b",
-            "Inclinado para Cima?",
+            "¿Inclinado hacia arriba?",
             "tilted_up"
         ],
         [
             "b",
-            "Inclinado para Baixo?",
+            "¿Inclindado hacia abajo?",
             "tilted_down"
         ],
         [
             "b",
-            "Chacoalhando?",
+            "¿Agitado?",
             "shaken"
         ],
         [
             "r",
-            "Ler pino digital %m.pins",
+            "Lee el Pin digital %m.pins",
             "digital_read",
             "0"
         ],
         [
             "r",
-            "Ler pino analógico %m.pins",
+            "Lee el Pin analógico %m.pins",
             "analog_read",
             "0"
         ]
@@ -94,37 +94,37 @@
 	"images": [
             "01_FELIZ",
             "02_TRISTE",
-            "03_BRAVO",
-            "04_SORRISO",
-            "05_CORAÇÃO",
-            "06_CONFUSO",
-            "07_SONOLENTO",
-            "08_SURPRESO",
-            "09_BOBO",
+            "03_ENFADADO",
+            "04_SONRISA",
+            "05_CORAZON",
+            "06_CONFUNDIDO",
+            "07_DORMIDO",
+            "08_SORPRENDIDO",
+            "09_TONTO",
             "10_FABULOSO",
-            "11_HMM",
-            "12_SIM",
-            "13_NÃO",
+            "11_MEH",
+            "12_SI",
+            "13_NO",
             "14_TRIANGULO",
             "15_DIAMANTE",
-            "16_DIAMANTE PEQUENO",
-            "17_QUADRADO",
-            "18_QUADRADO PEQUENO",
-            "19_ALVO",
-            "20_BONEQUINHO",
-            "21_COELHO",
+            "16_DIAMANTE_PEQUEÑO",
+            "17_CUADRADO",
+            "18_CUADRADO_PEQUEÑO",
+            "19_DIANA",
+            "20_PALO",
+            "21_CONEJO",
             "22_VACA",
-            "23_PATINS",
+            "23_MONOPATIN",
             "24_CASA",
-            "25_COBRA",
-            "26_SETA - NORTE",
-            "27_SETA - NORDESTE",
-            "28_SETA - LESTE",
-            "29_SETA - SUDESTE",
-            "30_SETA - SUL",
-            "31_SETA - SUDOESTE",
-            "32_SETA - OESTE",
-            "33_SETA - NOROESTE"
+            "25_SERPIENTE",
+            "26_FLECHA_NORTE",
+            "27_FLECHA_NORESTE",
+            "28_FLECHA_ESTE",
+            "29_FLECHA_SUDESTE",
+            "30_FLECHA_SUR",
+            "31_FLECHA_SUDOESTE",
+            "32_FLECHA_OESTE",
+            "33_FLECHA_NOROESTE"
 	    ],
         "pins": [
             "0",

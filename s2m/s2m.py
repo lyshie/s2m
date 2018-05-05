@@ -131,7 +131,7 @@ class S2M:
                           "32": "ARROW_W",
                           "33": "ARROW_NW"}
 
-        print('\ns2m version 2.5  Copyright(C) 2018 Alan Yorinks  All rights reserved.')
+        print('\ns2m version 2.10 Copyright(C) 2018 Alan Yorinks  All rights reserved.')
         print("\nPython Version %s" % sys.version)
 
         # When control C is entered, Scratch will close if auto-launched
@@ -321,6 +321,14 @@ class S2M:
             self.scratch_project = self.base_path + "/scratch_files/projects/motion_ptbr.sb2"
         elif self.language == 'ptbrs':
             self.scratch_project = self.base_path + "/scratch_files/projects/motion_ptbr.sb2"
+        elif self.language == '7':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_es.sb2"
+        elif self.language == 'es':
+            self.scratch_project = self.base_path + "/scratch_files/projects/s2m_es.sb2"
+        elif self.language == '8':
+            self.scratch_project = self.base_path + "/scratch_files/projects/motion_es.sb2"
+        elif self.language == 'ess':
+            self.scratch_project = self.base_path + "/scratch_files/projects/motion_es.sb2"
 
         exec_string = self.scratch_executable + ' ' + self.scratch_project
 
@@ -349,7 +357,7 @@ class S2M:
         reply = resp.split(',')
 
         # if this reply is not the correct length, just toss it.
-        if len(reply) != 11:
+        if len(reply) > 12:
             return ''
 
         resp = self.build_poll_response(reply)
@@ -418,17 +426,17 @@ class S2M:
         """
 
         # set all digital and analog outputs to zero
-        self.send_command('t,0,0')
-        self.send_command('t,1,0')
-        self.send_command('t,2,0')
+        # self.send_command('t,0,0')
+        # self.send_command('t,1,0')
+        # self.send_command('t,2,0')
 
-        self.send_command('a,0,0')
-        self.send_command('a,1,0')
-        self.send_command('a,2,0')
+        # self.send_command('a,0,0')
+        # self.send_command('a,1,0')
+        # self.send_command('a,2,0')
 
         # clear the display
 
-        self.send_command('c')
+        # self.send_command('c')
 
     def build_poll_response(self, data_list):
         """
@@ -560,8 +568,10 @@ def main():
                         help="Select Language: \n0 = English(default)\n1 or ja = Japanese\n" \
                              "2 or ko = Korean\n3 or tw = Traditional Chinese" \
                              "\n4 or tws = Traditional Chinese Sample Project" \
-                             "\n5 or ptbr = Brazilian Portuguese"
-                             "\n6 or ptbrs = Brazilian Portugues Sample Project")
+                             "\n5 or ptbr = Brazilian Portuguese" \
+                             "\n6 or ptbrs = Brazilian Portugues Sample Project" \
+                             "\n7 or es = Spanish" \
+                             "\n8 or ess = Spanish Sample Project")
     parser.add_argument("-p", dest="comport", default="None", help="micro:bit COM port - e.g. /dev/ttyACMO or COM3")
     parser.add_argument("-r", dest="rpi", default="None", help="Set to TRUE to run on a Raspberry Pi")
     parser.add_argument("-s", dest="scratch_exec", default="default", help="Full path to Scratch executable")
@@ -584,7 +594,8 @@ def main():
     else:
         comport = args.comport
 
-    valid_languages = ['0', '1', 'ja', '2', 'ko', '3', 'tw', '4', 'tws', '5', 'ptbr', '6', 'ptbrs']
+    valid_languages = ['0', '1', 'ja', '2', 'ko', '3', 'tw', '4', 'tws', '5', 'ptbr', '6', 'ptbrs', '7', 'es',
+                       '8', 'ess']
     lang = args.language
 
     if lang not in valid_languages:
