@@ -78,6 +78,76 @@
             "shaken"
         ],
         [
+            "b",
+            "Player1 button A pressed?",
+            "player1_button_a_pressed"
+        ],
+        [
+            "b",
+            "Player1 button B pressed?",
+            "player1_button_b_pressed"
+        ],
+        [
+            "b",
+            "Player1 tilted right?",
+            "player1_tilted_right"
+        ],
+        [
+            "b",
+            "Player1 tilted left?",
+            "player1_tilted_left"
+        ],
+        [
+            "b",
+            "Player1 tilted up?",
+            "player1_tilted_up"
+        ],
+        [
+            "b",
+            "Player1 tilted down?",
+            "player1_tilted_down"
+        ],
+        [
+            "b",
+            "Player1 shaken?",
+            "player1_shaken"
+        ],
+        [
+            "b",
+            "Player2 button A pressed?",
+            "player2_button_a_pressed"
+        ],
+        [
+            "b",
+            "Player2 button B pressed?",
+            "player2_button_b_pressed"
+        ],
+        [
+            "b",
+            "Player2 tilted right?",
+            "player2_tilted_right"
+        ],
+        [
+            "b",
+            "Player2 tilted left?",
+            "player2_tilted_left"
+        ],
+        [
+            "b",
+            "Player2 tilted up?",
+            "player2_tilted_up"
+        ],
+        [
+            "b",
+            "Player2 tilted down?",
+            "player2_tilted_down"
+        ],
+        [
+            "b",
+            "Player2 shaken?",
+            "player2_shaken"
+        ],
+        [
             "r",
             "Digital Read Pin %m.pins",
             "digital_read",

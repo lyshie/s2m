@@ -354,6 +354,17 @@ class S2M:
         self.ignore_poll = True
         resp = self.send_command('g')
         resp = resp.lower()
+
+        resp, player1, player2 = resp.split(':')
+
+        player1_reply = player1.split(',')
+        if len(player1_reply) < 8:
+            player1_reply = [ False for i in range(8) ]
+
+        player2_reply = player2.split(',')
+        if len(player2_reply) < 8:
+            player2_reply = [ False for i in range(8) ]
+
         reply = resp.split(',')
 
         # if this reply is not the correct length, just toss it.
@@ -361,6 +372,10 @@ class S2M:
             return ''
 
         resp = self.build_poll_response(reply)
+
+        # player1 and player2 sensor values from radio
+        resp += self.build_poll_response_radio(player1_reply, player2_reply)
+
         return resp
 
     def handle_display_image(self, data):
@@ -495,6 +510,39 @@ class S2M:
         reply += 'analog_read/0 ' + data_list[8] + '\n'
         reply += 'analog_read/1 ' + data_list[9] + '\n'
         reply += 'analog_read/2 ' + data_list[10] + '\n'
+
+        return reply
+
+    def build_poll_response_radio(self, player1, player2):
+        """
+        Build an HTTP response from the raw micro:bit radio data.
+
+        :param data_list: raw data received from s2mb.py
+        :return: response string
+        """
+
+        # reply string
+        reply = ''
+
+        # player1
+        reply += 'player1_tilted_up '    + str(player1[1]) + '\n'
+        reply += 'player1_tilted_down '  + str(player1[2]) + '\n'
+        reply += 'player1_tilted_left '  + str(player1[3]) + '\n'
+        reply += 'player1_tilted_right ' + str(player1[4]) + '\n'
+
+        reply += 'player1_button_a_pressed ' + str(player1[5]) + '\n'
+        reply += 'player1_button_b_pressed ' + str(player1[6]) + '\n'
+        reply += 'player1_shaken '           + str(player1[7]) + '\n'
+
+        # player2
+        reply += 'player2_tilted_up '    + str(player2[1]) + '\n'
+        reply += 'player2_tilted_down '  + str(player2[2]) + '\n'
+        reply += 'player2_tilted_left '  + str(player2[3]) + '\n'
+        reply += 'player2_tilted_right ' + str(player2[4]) + '\n'
+
+        reply += 'player2_button_a_pressed ' + str(player2[5]) + '\n'
+        reply += 'player2_button_b_pressed ' + str(player2[6]) + '\n'
+        reply += 'player2_shaken '           + str(player2[7]) + '\n'
 
         return reply
 
